@@ -98,7 +98,7 @@ export class MideaAccessory {
 				.setProps({
 					validValues: [
 						this.platform.Characteristic.TargetHeaterCoolerState.AUTO,
-						this.platform.Characteristic.TargetHeaterCoolerState.HEAT,
+						//this.platform.Characteristic.TargetHeaterCoolerState.HEAT,
 						this.platform.Characteristic.TargetHeaterCoolerState.COOL
 					]
 				})
@@ -117,14 +117,14 @@ export class MideaAccessory {
 					maxValue: this.maxTemperature,
 					minStep: this.temperatureSteps
 				})
-			this.service.getCharacteristic(this.platform.Characteristic.HeatingThresholdTemperature)
+		/*	this.service.getCharacteristic(this.platform.Characteristic.HeatingThresholdTemperature)
 				.on('get', this.handleHeatingThresholdTemperatureGet.bind(this))
 				.on('set', this.handleHeatingThresholdTemperatureSet.bind(this))
 				.setProps({
 					minValue: this.minTemperature,
 					maxValue: this.maxTemperature,
 					minStep: this.temperatureSteps
-				})
+				})*/
 			this.service.getCharacteristic(this.platform.Characteristic.RotationSpeed)
 				.on('get', this.handleRotationSpeedGet.bind(this))
 				.on('set', this.handleRotationSpeedSet.bind(this))
@@ -148,7 +148,7 @@ export class MideaAccessory {
 				this.service.updateCharacteristic(this.platform.Characteristic.TargetHeaterCoolerState, this.targetHeaterCoolerState());
 				this.service.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, this.indoorTemperature);
 				this.service.updateCharacteristic(this.platform.Characteristic.CoolingThresholdTemperature, this.targetTemperature);
-				this.service.updateCharacteristic(this.platform.Characteristic.HeatingThresholdTemperature, this.targetTemperature);
+				//this.service.updateCharacteristic(this.platform.Characteristic.HeatingThresholdTemperature, this.targetTemperature);
 				this.service.updateCharacteristic(this.platform.Characteristic.RotationSpeed, this.rotationSpeed());
 				this.service.updateCharacteristic(this.platform.Characteristic.SwingMode, this.SwingMode());
 				this.service.updateCharacteristic(this.platform.Characteristic.TemperatureDisplayUnits, this.useFahrenheit);
