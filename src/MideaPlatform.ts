@@ -10,6 +10,7 @@ import qs from 'querystring';
 import Utils from './Utils';
 import Constants from './Constants';
 import PacketBuilder from './PacketBuilder';
+import axiosRetry from 'axios-retry';
 
 import ACSetCommand from './commands/ACSetCommand';
 import DehumidifierSetCommand from './commands/DehumidifierSetCommand';
@@ -62,6 +63,7 @@ export class MideaPlatform implements DynamicPlatformPlugin {
 				jar: this.jar
 			});
 		};
+		axiosRetry(this.apiClient, { retries: 3 });
 		this.log = log;
 		this.config = config;
 		api.on('didFinishLaunching', () => {
