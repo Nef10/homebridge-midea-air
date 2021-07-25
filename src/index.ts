@@ -4,5 +4,5 @@ import { MigrationHelper } from './MigrationHelper'
 
 export = (api: API) => {
   new MigrationHelper(console, api.user.configPath())
-  api.registerPlatform('homebridge-midea-air', 'midea-air', MideaPlatform);
+  api.registerPlatform('@nef10/homebridge-midea-air', 'midea-air', MideaPlatform);
 }
