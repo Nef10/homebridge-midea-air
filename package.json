@@ -23,7 +23,7 @@
     "author": "Nef10",
     "license": "MIT",
     "dependencies": {
-        "axios": "^0.21.1",
+        "axios": "^1.6.0",
         "axios-cookiejar-support": "^1.0.1",
         "axios-retry": "^3.1.9",
         "node-tunnel": "^4.0.0",
